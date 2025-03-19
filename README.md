@@ -10,3 +10,11 @@ Il va également procéder à l'installation de LazyVim, ainsi que les dépendan
 - nodejs
 - npm
 - ripgrep
+
+## Installation
+
+```bash
+git clone https://github.com/jeremky/nviminstall
+cd nviminstall
+./nviminstall.sh
+```
