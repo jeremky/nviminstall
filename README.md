@@ -4,4 +4,9 @@ Ce script permet l'installation de NeoVim dans sa dernière version sur un syst�
 
 Il va également procéder à l'installation de LazyVim, ainsi que les dépendances suivantes : 
 
-- curl fd-find git nodejs npm ripgrep
+- curl
+- fd-find
+- git
+- nodejs
+- npm
+- ripgrep
