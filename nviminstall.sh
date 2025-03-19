@@ -28,6 +28,7 @@ fi
 
 # Installation de LazyVim
 if [[ ! -d ~/.config/nvim ]]; then
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-  rm -fr ~/.config/nvim/.git
+  #git clone https://github.com/LazyVim/starter ~/.config/nvim
+  #rm -fr ~/.config/nvim/.git
+  cp -Rp $(dirname "$0")/config ~/.config/nvim
 fi
