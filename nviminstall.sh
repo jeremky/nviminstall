@@ -27,8 +27,12 @@ if [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
 fi
 
 # Installation de LazyVim
+confdir=$(dirname "$0")/config
 if [[ ! -d ~/.config/nvim ]]; then
-  #git clone https://github.com/LazyVim/starter ~/.config/nvim
-  #rm -fr ~/.config/nvim/.git
-  cp -Rp $(dirname "$0")/config ~/.config/nvim
+  if [[ -d $confdir ]]; then
+    cp -Rp $confdir ~/.config/nvim
+  else
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -fr ~/.config/nvim/.git
+  fi
 fi
