@@ -10,7 +10,7 @@ fi
 
 # Installation des dépendances
 if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]]; then
-  sudo apt -y install curl fd-find git nodejs npm ripgrep
+  sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
 fi
 
 # Téléchargement et installation
