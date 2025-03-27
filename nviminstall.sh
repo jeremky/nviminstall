@@ -11,6 +11,7 @@ fi
 # Installation des dépendances
 if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]] && [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
+  echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >>$HOME/.bashrc
 fi
 
 # Téléchargement et installation
@@ -20,11 +21,6 @@ rm -fr ~/.local/nvim
 tar -C ~/.local -xzf nvim-linux-$arch.tar.gz
 mv ~/.local/nvim-linux-$arch ~/.local/nvim
 rm nvim-linux-$arch.tar.gz
-
-# Ajout du PATH dans .bashrc
-if [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
-  echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >>$HOME/.bashrc
-fi
 
 # Installation de LazyVim
 confdir=$(dirname "$0")/config
