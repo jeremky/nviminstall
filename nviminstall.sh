@@ -9,9 +9,9 @@ else
 fi
 
 # Installation des dépendances
-if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]] && [[ ! -f ~/.local/share/nvim/.aptinstalled ]]; then
+if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]] && [[ ! -f ~/.config/nvim/.aptinstalled ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
-  touch ~/.local/share/nvim/.aptinstalled
+  touch ~/.config/nvim/.aptinstalled
 fi
 
 # Téléchargement et installation
