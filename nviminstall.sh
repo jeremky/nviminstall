@@ -9,7 +9,7 @@ else
 fi
 
 # Installation des dépendances
-if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]]; then
+if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]] && [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
 fi
 
