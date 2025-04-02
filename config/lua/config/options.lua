@@ -1,7 +1,6 @@
 ---- Options
 
 -- Paramétrages de base
-vim.opt.hlsearch = true                        -- Affiche en surbrillance les recherches
 vim.opt.showmode = false                       -- Désactive les informations d'état
 vim.opt.smartindent = true                     -- Indentation intelligente
 vim.opt.smarttab = true                        -- Gestion des espaces en début de ligne
@@ -16,7 +15,6 @@ vim.opt.showcmd = true                         -- Afficher la commande dans la l
 vim.opt.showmatch = true                       -- Afficher les parenthèses correspondantes
 vim.opt.ignorecase = true                      -- Ignorer la casse
 vim.opt.smartcase = true                       -- Faire un appariement intelligent
-vim.opt.incsearch = true                       -- Recherche incrémentielle
 vim.opt.hidden = true                          -- Cacher les tampons lorsqu'ils sont abandonnés
 vim.opt.mouse = ""                             -- Désactive la souris par défaut
 vim.opt.backup = false                         -- Désactive les sauvegardes automatiques
@@ -27,6 +25,10 @@ vim.opt.relativenumber = false                 -- Utilise des numéros de line a
 vim.opt.list = false                           -- Désactive les caractères cachés
 vim.opt.listchars = { eol = "$", space = "·" } -- Désactivation des caractères invisibles
 vim.opt.cole = 0                               -- Désactive le masquage de certains codes
+
+-- Recherche
+--vim.opt.hlsearch = true                        -- Affiche en surbrillance les recherches
+--vim.opt.incsearch = true                       -- Recherche incrémentielle
 
 -- Configuration pour tmux
 if vim.env.TERM == "tmux-256color" then
