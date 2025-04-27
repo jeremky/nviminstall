@@ -12,9 +12,6 @@ fi
 if [[ -f /usr/bin/sudo ]] && [[ -f /usr/bin/apt ]] && [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
   echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >>$HOME/.bashrc
-else
-  echo "Système incompatible"
-  exit 0
 fi
 
 # Téléchargement et installation
