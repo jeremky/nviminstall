@@ -21,7 +21,7 @@ cd nviminstall
 
 ## Configuration
 
-Certains plugins fournis par défaut par LazyVim sont désactivés dans la configuration associée au script. Si vous souhaitez les réactiver, éditez le fichier de configuration et supprimez les lignes correspondantes :
+Certains plugins par défaut de LazyVim sont désactivés par la configuration fournie. Pour les réactiver, éditez le fichier suivant :
 
 ```bash
 nvim ~/.config/nvim/lua/plugins/disabled.lua
