@@ -7,10 +7,16 @@ else
   arch=x86_64
 fi
 
+# Vérification du système
+if [[ ! -f /usr/bin/sudo && ! -f /usr/bin/apt ]]; then
+  echo "Système non compatible"
+  exit 0
+fi
+
 # Installation des dépendances
-if [[ -f /usr/bin/sudo && -f /usr/bin/apt && -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
+if [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
-  echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >>$HOME/.bashrc
+  echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >> $HOME/.bashrc
 fi
 
 # Téléchargement et installation
