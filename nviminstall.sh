@@ -10,7 +10,7 @@ fi
 # Vérification du système
 if [[ ! -f /usr/bin/sudo && ! -f /usr/bin/apt ]]; then
   echo "Système non compatible"
-  exit 0
+  exit 1
 fi
 
 # Installation des dépendances
@@ -21,7 +21,7 @@ fi
 
 # Téléchargement et installation
 mkdir -p ~/.local
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$arch.tar.gz
+curl -LOs https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$arch.tar.gz
 rm -fr ~/.local/nvim
 tar -C ~/.local -xzf nvim-linux-$arch.tar.gz
 mv ~/.local/nvim-linux-$arch ~/.local/nvim
@@ -37,3 +37,5 @@ if [[ ! -d ~/.config/nvim ]]; then
     rm -fr ~/.config/nvim/.git
   fi
 fi
+
+echo "Installation de Neovim terminée"
