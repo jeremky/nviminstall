@@ -22,10 +22,15 @@ fi
 # Téléchargement et installation
 mkdir -p ~/.local
 curl -LOs https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$arch.tar.gz
-rm -fr ~/.local/nvim
-tar -C ~/.local -xzf nvim-linux-$arch.tar.gz
-mv ~/.local/nvim-linux-$arch ~/.local/nvim
-rm nvim-linux-$arch.tar.gz
+if [[ -f nvim-linux-$arch.tar.gz ]]; then
+  rm -fr ~/.local/nvim
+  tar -C ~/.local -xzf nvim-linux-$arch.tar.gz
+  mv ~/.local/nvim-linux-$arch ~/.local/nvim
+  rm nvim-linux-$arch.tar.gz
+else
+  echo "Problème de téléchargement de Neovim"
+  exit 0
+fi
 
 # Installation de LazyVim
 confdir=$(dirname "$0")/config
