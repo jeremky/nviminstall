@@ -29,7 +29,7 @@ if [[ -f nvim-linux-$arch.tar.gz ]]; then
   rm nvim-linux-$arch.tar.gz
 else
   echo "Problème de téléchargement de Neovim"
-  exit 0
+  exit 1
 fi
 
 # Installation de LazyVim
