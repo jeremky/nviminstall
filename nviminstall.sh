@@ -33,7 +33,7 @@ else
 fi
 
 # Installation de LazyVim
-confdir=$(dirname "$0")/config
+confdir=$(dirname "$(realpath "$0")")/config
 if [[ ! -d ~/.config/nvim ]]; then
   if [[ -d $confdir ]]; then
     cp -Rp $confdir ~/.config/nvim
