@@ -7,9 +7,14 @@ else
   arch=x86_64
 fi
 
+# Messages colorisés
+error()    { echo -e "\033[0;31m====> $*\033[0m" ;}
+message()  { echo -e "\033[0;32m====> $*\033[0m" ;}
+warning()  { echo -e "\033[0;33m====> $*\033[0m" ;}
+
 # Vérification du système
 if [[ ! -f /usr/bin/sudo && ! -f /usr/bin/apt ]]; then
-  echo "Système non compatible"
+  error "Système non compatible"
   exit 1
 fi
 
@@ -28,7 +33,7 @@ if [[ -f nvim-linux-$arch.tar.gz ]]; then
   mv ~/.local/nvim-linux-$arch ~/.local/nvim
   rm nvim-linux-$arch.tar.gz
 else
-  echo "Problème de téléchargement de Neovim"
+  error "Problème de téléchargement de Neovim"
   exit 1
 fi
 
@@ -43,4 +48,4 @@ if [[ ! -d ~/.config/nvim ]]; then
   fi
 fi
 
-echo "Installation de Neovim terminée"
+message "Installation de Neovim terminée"
