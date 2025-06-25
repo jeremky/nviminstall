@@ -19,7 +19,7 @@ if [[ ! -f /usr/bin/sudo && ! -f /usr/bin/apt ]]; then
 fi
 
 # Installation des dépendances
-if [[ -z "$(cat $HOME/.bashrc | grep "~/.local/nvim")" ]]; then
+if [[ -z "$(grep "~/.local/nvim" $HOME/.bashrc)" ]]; then
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
   echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >> $HOME/.bashrc
 fi
