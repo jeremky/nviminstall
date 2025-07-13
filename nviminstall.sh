@@ -10,7 +10,7 @@ fi
 # Messages colorisés
 error()    { echo -e "\033[0;31m====> $*\033[0m" ;}
 message()  { echo -e "\033[0;32m====> $*\033[0m" ;}
-warning()  { echo -e "\033[0;33m====> $*\033[0m" ;}
+warning()  { echo ; echo -e "\033[0;33m====> $*\033[0m" ;}
 
 # Vérification du système
 if [[ ! -f /usr/bin/sudo && ! -f /usr/bin/apt ]]; then
@@ -20,15 +20,15 @@ fi
 
 # Installation des dépendances
 if [[ -z "$(grep "~/.local/nvim" $HOME/.bashrc)" ]]; then
-  echo ; warning "Installation des dépendances..."
+  warning "Installation des dépendances..."
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
   echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >> $HOME/.bashrc
-  echo ; message "Dépendances installées"
+  message "Dépendances installées"
 fi
 
 # Téléchargement et installation
 mkdir -p ~/.local
-echo ; warning "Téléchargement de Neovim..."
+warning "Téléchargement de Neovim..."
 curl -LOs https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$arch.tar.gz
 if [[ -f nvim-linux-$arch.tar.gz ]]; then
   rm -fr ~/.local/nvim
