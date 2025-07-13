@@ -20,12 +20,15 @@ fi
 
 # Installation des dépendances
 if [[ -z "$(grep "~/.local/nvim" $HOME/.bashrc)" ]]; then
+  echo ; warning "Installation des dépendances..."
   sudo apt -y install curl fd-find git nodejs npm ripgrep xclip
   echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >> $HOME/.bashrc
+  echo ; message "Dépendances installées"
 fi
 
 # Téléchargement et installation
 mkdir -p ~/.local
+echo ; warning "Téléchargement de Neovim..."
 curl -LOs https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$arch.tar.gz
 if [[ -f nvim-linux-$arch.tar.gz ]]; then
   rm -fr ~/.local/nvim
@@ -49,3 +52,4 @@ if [[ ! -d ~/.config/nvim ]]; then
 fi
 
 message "Installation de Neovim terminée"
+echo
