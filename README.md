@@ -6,9 +6,8 @@ Il va également procéder à l'installation de LazyVim, et des dépendances sui
 
 - curl
 - fd-find
+- gcc
 - git
-- nodejs
-- npm
 - ripgrep
 
 ## Installation
