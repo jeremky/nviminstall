@@ -21,9 +21,8 @@ require("lazy").setup({
   },
   defaults = {
     lazy = false,
-    version = false, -- always use the latest git commit
+    version = false,
   },
-  install = { colorscheme = { "tokyonight" } },
   checker = {
     enabled = true,
     notify = false,
