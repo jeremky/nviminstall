@@ -21,7 +21,7 @@ fi
 # Installation des dépendances
 if [[ -z "$(grep "~/.local/nvim" $HOME/.bashrc)" ]]; then
   warning "Installation des dépendances..."
-  sudo apt -y install curl fd-find gcc git ripgrep xclip
+  sudo apt -y install curl fd-find gcc git ripgrep
   echo 'export PATH="$PATH:'~/.local'/nvim/bin"' >> $HOME/.bashrc
   message "Dépendances installées"
 fi
