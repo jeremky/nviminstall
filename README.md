@@ -9,6 +9,7 @@ Il va également procéder à l'installation de LazyVim, et des dépendances sui
 - gcc
 - git
 - ripgrep
+- tree-sitter-cli
 
 ## Installation
 
