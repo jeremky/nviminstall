@@ -50,6 +50,5 @@ if [[ ! -d ~/.config/nvim ]]; then
     rm -fr ~/.config/nvim/.git
   fi
 fi
-
 message "Installation de Neovim terminée"
 echo
