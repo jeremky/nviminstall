@@ -28,3 +28,7 @@ endfunction
 
 -- Changement de document
 vim.api.nvim_set_keymap("n", "<S-TAB>", "<C-W>w", { noremap = true, silent = true })
+
+-- Désactiver la copie vers le clipboard
+vim.keymap.set({ 'n', 'v' }, 'x', '"_x')
+vim.keymap.set({ 'n', 'v' }, 'd', '"_d')
